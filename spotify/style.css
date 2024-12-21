@@ -13,6 +13,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Sticks the header to the top of the viewport */
+    z-index: 1000; /* Ensures it stays above other elements */
 }
 
 .top {
@@ -150,7 +153,6 @@ header {
     cursor: pointer;
     color: #b3b3b3;
     font-weight: bolder;
-
     transition: transform 0.3s ease, background-color 0.3sec ease;
 }
 
@@ -161,9 +163,10 @@ header {
 }
 
 .left {
-    width: 25vw;
+    width: 20vw;
     margin: 0 5px 0 10px;
     padding: 10px;
+    height: 100vh;
 }
 
 .library {
@@ -171,7 +174,7 @@ header {
     align-items: center;
     gap: 3px;
     padding: 5px 0 30px 0;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 .library .library-icon {
@@ -181,12 +184,14 @@ header {
 }
 
 .library .your-library {
-    margin-right: 160px;
+    margin-right: 100px;
+    font-size: 16px;
+    color: #aaaaaa;
 }
 
 .library .add-icon {
     width: 18px;
-    margin: 15px;
+    margin: 20px;
     cursor: pointer;
 }
 
@@ -256,7 +261,7 @@ header {
 }
 
 .right {
-    width: 75vw;
+    width: 85vw;
     margin: 0 10px;
     padding: 15px 10px;
 }
@@ -269,15 +274,15 @@ header {
 }
 
 .radio-section h2{
-    padding: 35px 0 10px 15px
+    padding: 20px 0 10px 12px
 
 }
 .Featured-Chart-section h2{
-    padding: 35px 0 10px 15px
+    padding: 10px 0 10px 12px
 
 }
 .oureditor-section h2{
-    padding: 35px 0 10px 15px
+    padding: 15px 0 10px 12px
 }
 
 .artist-section h2:hover{
@@ -317,23 +322,26 @@ header {
 .radio-card,
 .featured-cards,
 .spotifyplaylists {
-    width: 160px;
-   margin:  5px;
+    width: 140px;
+    margin: 5px;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px; /* Space between image and name */
     transition: transform 0.3s ease;
     cursor: pointer;
 }
 
 /* Image styles */
 .artist-image img {
-    width: 100%;
-    height: 100%;
-   object-fit: contain;
-    border-radius: 50%;
-    /* Make image round */
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%; /* Round image */
     display: block;
 }
 
@@ -346,34 +354,28 @@ header {
    object-fit: contain;
 }
 
-/* Hover effect with light grey background */
-.artist-card:hover .overlay,
-.album-card:hover .overlay,
-.radio-card:hover .overlay,
-.featured-cards:hover .overlay,
-.spotifyplaylists:hover .overlay {
-    background-color: rgba(255, 253, 253, 0.6);
-    /* Light grey flash */
-    opacity: 1;
-}
-
-/* Overlay styling */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2));
-   opacity: 0;
-    transition: opacity 0.3s ease;
-    /* border-radius: 50%; */
-}
-
 /* Play button */
+.artist-card .play-button {
+    position: absolute;
+    bottom: 80px;
+    right: 10px;
+    background-color: #1ed760;
+    color: black;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 .play-button {
     position: absolute;
-    bottom: 50px;
+    bottom: 140px;
     right: 10px;
     background-color: #1ed760;
     color: black;
@@ -401,7 +403,6 @@ header {
 
 /* Text below the image */
 .card-text {
-    text-align: center;
     margin-top: 10px;
     color: white;
     font-size: 14px;
@@ -409,21 +410,88 @@ header {
 }
 
 .artist-card .name{
-    margin: 20px;
-}
+    display: grid;
+    gap: 10px;
+    text-align: flex-start;
+} 
 
 .artist-card .name p{
-   padding-bottom: 6px;
-   font-weight: bolder;
-
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin: 0 5px;
 }
 
-.album-card .name{
-    margin: 20px;
+.artist-card .name span{
+    font-size: 14px;
+    color: #aaaaaa;
+    margin: 0 5px;
 
 }
 
 .album-card .name p{
    padding-bottom: 6px;
    font-weight: bolder;
+   font-size: 15px;
+   color: white;
+}
+
+.album-card .name span{
+    font-size: 14px;
+    color: #aaaaaa;
+ }
+
+
+.radio-card, .featured-cards, .spotifyplaylists, .name p{
+    margin: 20px 2px;
+    color: #aaaaaa;
+
+}
+
+.popfornewuser{
+    position: sticky; /* Makes the header sticky */
+    bottom: 0; /* Sticks the header to the top of the viewport */
+    z-index: 1000;
+    padding: 2px;
+    background-color: black;
+}
+
+.preview{
+    background: linear-gradient(to right, #c13584, #833ab4, #5851db, #405de6);
+    padding: 10px 15px;
+    margin: 3px;
+    display: flex;
+    justify-content: space-between;
+ /* Ensures it stays above other elements */
+    
+}
+
+.preview p:first-of-type {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.preview p:nth-of-type(2) {
+    font-size: 16px;
+    color:white;
+    margin-top: 5px;
+}
+
+.preview button {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.preview button:hover {
+    background-color: #e6e6e6;
+    transform: scale(1.1);
+
 }
