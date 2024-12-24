@@ -14,7 +14,7 @@ html, body {
 
 header {
     background-color: #000000;
-    padding: 10px 10px;
+    padding: 2px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -169,107 +169,170 @@ header {
     color: white;
 }
 
+
 .left {
     width: 20vw;
-    margin: 0 5px 0 10px;
-    padding: 10px;
-    height: calc(100vh - 60px); /* Exclude header height */
+    margin: 0;
+    padding: 10px 15px;
+    height: calc(85vh - 80px); /* Full height excluding header */
     position: fixed;
-    top: 80px; /* Below the sticky header */
+    top: 65px; /* Sticky position below header */
+    background-color: #121212;
     z-index: 1000;
-    overflow-y: auto; /* Optional: Add a scroll bar if the content exceeds the height */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
 }
 
-.library {
+.library-header {
+    position: sticky;
+    top: 0; /* Sticks at the top within the parent container */
+    background-color: #121212;
+    z-index: 10; /* Ensure it stays above scrolling content */
+    padding-bottom: 10px;
+    box-shadow: 10px 35px 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.library-header .library {
     display: flex;
     align-items: center;
-    gap: 3px;
-    padding: 5px 0 30px 0;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 0;
     font-weight: bold;
 }
 
-.library .library-icon {
+.library-header .library-icon {
     width: 25px;
-    margin: 15px;
+    margin-right: 10px;
     cursor: pointer;
 }
 
-.library .your-library {
-    margin-right: 100px;
-    font-size: 16px;
-    color: #aaaaaa;
-}
-
-.library .add-icon {
-    width: 18px;
-    margin: 20px;
-    cursor: pointer;
-}
-
-.create-playlist {
-    padding: 15px;
-    margin: 0 0 30px 0;
-}
-
-.create-playlist .p1 {
-    margin: 8px;
-    font-weight: bolder;
-    font-size: 17px;
-}
-
-.create-playlist .p2 {
-    margin: 10px 0 10px 8px;
+.library-header .your-library {
     font-size: 15px;
-    font-weight: 500;
+    color: #fff;
 }
 
-.create-playlist button {
-    margin: 8px;
-    padding: 10px 25px;
-    font-weight: bolder;
+.library-header .add-icon {
+    width: 20px;
     cursor: pointer;
-    border-radius: 45px;
-    border: none;
-    font-weight: bolder;
 }
 
-.create-podcasts {
+.scrollable-content {
+    flex: 1; /* Occupies remaining space between header and footer */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding-right: 5px; /* Space for scrollbar */
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+}
+
+.scrollable-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+    background-color: #767373;
+    border-radius: 4px;
+}
+
+.scrollable-content .create-playlist,
+.scrollable-content .create-podcasts {
     padding: 15px;
-    margin: 0 0 30px 0;
+    margin-bottom: 20px;
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.create-podcasts .p3 {
-    margin: 8px;
+.scrollable-content .create-playlist .p1,
+.scrollable-content .create-podcasts .p3 {
+    margin-bottom: 8px;
     font-weight: bolder;
-    font-size: 17px;
+    font-size: 16px;
+    color: #fff;
 }
 
-.create-podcasts .p4 {
-    margin: 10px 0 10px 8px;
+.scrollable-content .create-playlist .p2,
+.scrollable-content .create-podcasts .p4 {
+    margin-bottom: 15px;
     font-size: 14px;
     font-weight: 500;
+    color: #b3b3b3;
 }
 
-.create-podcasts button {
-    margin: 10px 0 2px 0;
-    padding: 8px 20px;
-    font-weight: bolder;
+.scrollable-content .create-playlist button,
+.scrollable-content .create-podcasts button {
+    margin-top: 8px;
+    padding: 8px 22px;
+    font-weight: bold;
     cursor: pointer;
-    border-radius: 45px;
+    border-radius: 24px;
     border: none;
-    font-weight: bolder;
-    font-size: 15px
+    background-color: white;
+    color: black;
+    font-size: 14px;
+}
+
+.scrollable-content .create-playlist button:hover,
+.scrollable-content .create-podcasts button:hover {
+    background-color: #1ed760;
+}
+
+.licence {
+    font-size: 12px;
+    color: #b3b3b3;
+    z-index: 10;
 }
 
 .licence ul {
+    margin-top: 10px;
+    padding: 0 0 15px 10px;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 12px;
 }
 
 .licence ul li {
-    margin: 5px;
-    font-size: 12px;
+    margin: 0;
 }
+
+.licence ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.licence ul li a:hover {
+    text-decoration: underline;
+}
+
+.cookies{
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: white;
+}
+
+.language {
+    color: #ffffff;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 1px solid white;
+    font-weight: bold;
+    background-color: black ;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.language:hover {
+    transform: scale(1.1);
+    border: 2px solid white;
+
+}
+
 
 .right {
     width: 75vw; /* Adjusted width (80vw minus the 5vw margin of .left) */
@@ -512,15 +575,14 @@ header {
 .preview button:hover {
     background-color: #e6e6e6;
     transform: scale(1.1);
-
 }
 
-
 footer{
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 50px;
     display: flex;
-    gap: 30px;
+    gap: 90px;
+    border-bottom: 1px solid rgb(53, 51, 51);
 }
 
 .footer-header p{
@@ -533,11 +595,13 @@ footer{
 .footer-header ul{
     list-style : none;
     margin: 0 20px;
+    margin-bottom: 40px;
 }
 
 .footer-header ul li{
     margin: 10px 0;
     color: #a9b3b3;
+    margin-bottom: 10px;
 }
 
 footer .sociallogo{
@@ -545,4 +609,12 @@ footer .sociallogo{
     height: 25px;
     width: 25px;
     gap: 25px;
+}
+
+.rights{
+    margin: 0 0 50px 10px;
+    font-size: 14px;
+    color: #a9b3b3;
+    font-weight: 600;
+  
 }
