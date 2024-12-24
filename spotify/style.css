@@ -5,18 +5,25 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow: hidden;  */
+}
 
 header {
     background-color: #000000;
-    /* Optional: Adjust to your preferred color */
     padding: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky; /* Makes the header sticky */
-    top: 0; /* Sticks the header to the top of the viewport */
-    z-index: 1000; /* Ensures it stays above other elements */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 60px; /* Fixed height for the header */
 }
+
 
 .top {
     background-color: #121212;
@@ -166,7 +173,11 @@ header {
     width: 20vw;
     margin: 0 5px 0 10px;
     padding: 10px;
-    height: 100vh;
+    height: calc(100vh - 60px); /* Exclude header height */
+    position: fixed;
+    top: 80px; /* Below the sticky header */
+    z-index: 1000;
+    overflow-y: auto; /* Optional: Add a scroll bar if the content exceeds the height */
 }
 
 .library {
@@ -261,10 +272,18 @@ header {
 }
 
 .right {
-    width: 85vw;
-    margin: 0 10px;
+    width: 75vw; /* Adjusted width (80vw minus the 5vw margin of .left) */
+    margin-left: 23vw; /* Account for the fixed .left section */
     padding: 15px 10px;
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: calc(100vh - 60px); /* Full viewport height minus header height */
 }
+
+.right::-webkit-scrollbar-thumb:hover {
+    background-color: #000000; /* Darker on hover */
+}
+
+
 .artist-section h2{
     padding: 16px;
 }
@@ -494,4 +513,36 @@ header {
     background-color: #e6e6e6;
     transform: scale(1.1);
 
+}
+
+
+footer{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    gap: 30px;
+}
+
+.footer-header p{
+    margin: 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.footer-header ul{
+    list-style : none;
+    margin: 0 20px;
+}
+
+.footer-header ul li{
+    margin: 10px 0;
+    color: #a9b3b3;
+}
+
+footer .sociallogo{
+    display: flex;
+    height: 25px;
+    width: 25px;
+    gap: 25px;
 }
