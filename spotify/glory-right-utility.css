@@ -25,11 +25,6 @@
     color: white;
 }
 
-.bg-cards-grey{
-    background: linear-gradient(to bottom, #1f1f1f,#121212, #121212);
-    color: white;
-}
-
 .invert{
     filter: invert(1);
 }
@@ -50,6 +45,11 @@
 }
 
 .bg-header{
-    background: linear-gradient(to bottom, #676767, #4e4e4e, #3a3a3a); 
+    background: linear-gradient(to bottom, #676767, #4e4e4e,#434343); 
+    color: white;
+}
+
+.bg-main{
+    background: linear-gradient(to bottom,#2b2b2b, #2b2b2b, #121212); 
     color: white;
 }
