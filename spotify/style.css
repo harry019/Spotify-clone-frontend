@@ -344,7 +344,11 @@ header {
 }
 
 .right::-webkit-scrollbar {
-    width: 15px; /* Width of the scrollbar */
+    width: 0; /* Width of the scrollbar */
+}
+
+.right:hover::-webkit-scrollbar {
+    width: 15px; /* Width of scrollbar for Webkit browsers */
 }
 
 .right::-webkit-scrollbar-track {

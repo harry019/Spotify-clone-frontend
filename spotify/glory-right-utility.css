@@ -50,6 +50,5 @@
 }
 
 .bg-main{
-    background: linear-gradient(to bottom,#2b2b2b, #2b2b2b, #121212); 
-    color: white;
+    background: linear-gradient(to bottom, #2d2d2d, #121212);
 }

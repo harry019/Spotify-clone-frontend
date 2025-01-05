@@ -6,9 +6,9 @@
     font-family: 'Roboto', sans-serif;
 }
 
-
 html, body{
     padding: 0;
+    margin: 0 5px;
     box-sizing: border-box;
     overflow: hidden; 
 }
@@ -229,7 +229,11 @@ header {
 }
 
 .scrollable-content::-webkit-scrollbar {
-    width: 8px;
+    width: 0; /* Width of the scrollbar */
+}
+
+.scrollable-content:hover::-webkit-scrollbar {
+    width: 10px; /* Width of scrollbar for Webkit browsers */
 }
 
 .scrollable-content::-webkit-scrollbar-thumb {
@@ -277,17 +281,17 @@ header {
 
 .scrollable-content .create-playlist button:hover,
 .scrollable-content .create-podcasts button:hover {
-    background-color: #1ed760;
+    transform: scale(1.1);
 }
 
 .licence {
     font-size: 12px;
     color: #b3b3b3;
     z-index: 10;
+    margin-top: 50px;
 }
 
 .licence ul {
-    margin-top: 10px;
     padding: 0 0 15px 10px;
     list-style: none;
     display: flex;
@@ -335,29 +339,61 @@ header {
 }
 /* **************************************************************************************** */
 .right {
-    width: calc(100% - 23vw); /* Adjust width dynamically */
-    margin-left: 23vw; 
-    /* padding: 15px 10px; */
-    padding: 0px;
-    overflow-y: auto; /* Enable vertical scrolling */
+    width: calc(100% - 23vw);
+    margin-left: 23vw;
     height: calc(100vh - 60px); /* Full viewport height minus header height */
+    overflow-y: scroll; /* Ensure scrolling behavior */
+    position: relative;
+    box-sizing: border-box;
 }
 
 .right::-webkit-scrollbar {
-    width: 15px; /* Width of the scrollbar */
+    width: 10px; /* Set a small width for default scrollbar for testing */
 }
 
-.right::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Background of the scrollbar track */
+.right::-webkit-scrollbar {
     display: none;
 }
 
 .right::-webkit-scrollbar-thumb {
-    background: #888; /* Color of the scrollbar handle */
+    background-color: #555;
+
 }
 
 .right::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Handle color on hover */
+    background-color: #888;
+}
+
+/* Custom Scrollbar Container */
+.right .custom-scrollbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px; /* Custom scrollbar width */
+    background: #f1f1f1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    height: 100%;
+    z-index: 9999;
+}
+
+.right:hover .custom-scrollbar {
+    opacity: 1;
+}
+
+/* Scrollbar Thumb */
+.right .custom-thumb {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px; /* Adjust dynamically with JS */
+    background: #888;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.right .custom-thumb:hover {
+    background: #555;
 }
 
 .album-header{
@@ -370,10 +406,10 @@ header {
 }
 
 .album-header .album-img{
-    width: 165px;
+    width: 175px;
     height: 175px;
     border-radius: 4px;
-    margin: 40px 20px 30px 20px;
+    margin: 25px 20px 20px 20px;
     box-shadow: 0 4px 60px rgba(0, 0, 0, .5);
 }
 
@@ -402,7 +438,7 @@ header {
 .artist-info .profile-img {
     width: 25px;
     height: 25px; 
-    padding: 0 0 10px 0;
+    padding-top: 40px;
     border-radius: 50%; /* Make the image circular */
     object-fit: cover; /* Ensure the image fills the circle */
   }
@@ -411,25 +447,26 @@ header {
 .artist-info p:first-of-type{
     font-size: 14px;
     color: #ffffff; /* Subtle text color */
-    padding: 0 0 10px 0;
+    padding-top: 40px;
     font-weight: 700;
   }
 
 .artist-info p:nth-of-type(2){
     font-size: 14px;
-    padding: 0 0 10px 0;
+    padding-top: 40px;
     color: #b2b2b2; /* Subtle text color */
 }
 
 .main{
     height: 75vh;
     z-index: 10;
+
 }
 .buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 0 20px 20px;
+    margin: 20px 10px 20px 20px;
 }
 
 .left-buttons, .right-buttons {
@@ -459,6 +496,8 @@ header {
 
 .list img{
     margin-right: 15px;
+    width: 15px;
+    height: 15px;
 }
 
 .list {
@@ -466,72 +505,101 @@ header {
     align-items: center;
     gap: 5px;
     font-size: 14px;
-    color: #b3b3b3;
+    color: #302e2e;
     cursor: pointer;
 }
 
 .time img{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
 }
-
+/* **************************************************************************** */
 .song-list {
-    background-color: #181818;
-    padding: 10px;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin-bottom: 40px; 
 }
 
 .song-list-header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #282828;
-    font-size: 14px;
-    color: #b3b3b3;
-}
-
-.song-names {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    font-size: 14px;
+    margin: 0 50px 10px 25px;
+    color: #b3b3b3;
     border-bottom: 1px solid #282828;
+    font-size: 14px;
 }
 
-.song-names p:first-child {
-    margin: 0;
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.song-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 50px 0 25px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.song-item:hover {
+    background-color: #282828;
+}
+
+.number {
     width: 30px;
-    text-align: center;
     color: #b3b3b3;
 }
 
-.song {
-    display: flex;
-    flex-direction: column;
+.song-info {
     flex: 1;
     margin-left: 10px;
 }
 
-.song p {
-    margin: 0;
-    font-weight: bold;
-    color: #ffffff;
+.song-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
 }
 
-.song span {
+.explicit {
+    background-color: #585858;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
     font-size: 12px;
+    font-weight: bold;
+}
+
+.artist {
     color: #b3b3b3;
+    font-size: 14px;
+}
+
+.duration {
+    color: #b3b3b3;
+    width: 50px;
+    text-align: right;
 }
 
 .time {
-    width: 50px;
-    text-align: right;
-    font-size: 14px;
-    color: #b3b3b3;
+    width: 16px;
+    height: 16px;
+    opacity: 1;
 }
+/* **************************************************************************** */
+.oureditor-section {
+    clear: both; /* Ensures it starts on a new line */
+}
+
 .oureditor-section h2{
-    padding: 0px 22px
+    padding: 0 22px;
+    clear: both;
 }
 
 .oureditor-section h2:hover{
@@ -539,18 +607,26 @@ header {
     cursor: pointer;
 }
 
-.playlist-from-our-editor{
-    margin:5px;
+
+.oureditor-section .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+}
+
+.playlist-from-our-editor {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between
+    gap: 20px;
+    justify-content: flex-start;
 }
 
 .spotifyplaylists {
     width: 140px;
     margin: 5px;
     padding: 0 0 0 22px;
-    position: relative;
+    position: re;
     overflow: hidden;
     border-radius: 10px;
     display: flex;
@@ -596,6 +672,11 @@ header {
     color: #aaaaaa;
 }
 
+.content-wrapper {
+    position: relative;
+    clear: both;
+}
+
 .Music-Player{
     position: sticky; /* Makes the header sticky */
     bottom: 0; /* Sticks the header to the top of the viewport */
@@ -608,6 +689,7 @@ header {
 footer{
     margin-top: 30px;
     margin-bottom: 50px;
+    margin-left: 20px;
     display: flex;
     gap: 90px;
     border-bottom: 1px solid rgb(53, 51, 51);
@@ -640,7 +722,7 @@ footer .sociallogo{
 }
 
 .rights{
-    margin: 0 0 50px 10px;
+    padding: 0 0 50px 35px;
     font-size: 14px;
     color: #a9b3b3;
     font-weight: 600;
