@@ -7,8 +7,7 @@
 }
 
 html, body{
-    padding: 0;
-    margin: 0 5px;
+    margin: 5px 5px;
     box-sizing: border-box;
     overflow: hidden; 
 }
@@ -21,7 +20,7 @@ header {
     justify-content: space-between;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1;
     height: 60px; /* Fixed height for the header */
 }
 
@@ -175,11 +174,12 @@ header {
     width: 20vw;
     margin: 0;
     padding: 10px 15px;
-    height: calc(85vh - 80px); /* Full height excluding header */
+    padding-bottom: 30px;
+    height: calc(85vh - 48px); /* Full height excluding header */
     position: fixed;
     top: 65px; /* Sticky position below header */
     background-color: #121212;
-    z-index: 1000;
+    z-index: 1;
     display: flex;
     flex-direction: column; /* Stack elements vertically */
 }
@@ -188,7 +188,7 @@ header {
     position: sticky;
     top: 0; /* Sticks at the top within the parent container */
     background-color: #121212;
-    z-index: 10; /* Ensure it stays above scrolling content */
+    z-index: 1; /* Ensure it stays above scrolling content */
     padding-bottom: 10px;
     box-shadow: 10px 35px 15px 0 rgba(0, 0, 0, 0.2);
 }
@@ -284,59 +284,6 @@ header {
     transform: scale(1.1);
 }
 
-.licence {
-    font-size: 12px;
-    color: #b3b3b3;
-    z-index: 10;
-    margin-top: 50px;
-}
-
-.licence ul {
-    padding: 0 0 15px 10px;
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: 12px;
-}
-
-.licence ul li {
-    margin: 0;
-}
-
-.licence ul li a {
-    color: #b3b3b3;
-    text-decoration: none;
-}
-
-.licence ul li a:hover {
-    text-decoration: underline;
-}
-
-.cookies{
-    margin-bottom: 20px;
-    margin-left: 10px;
-    color: white;
-}
-
-.language {
-    color: #ffffff;
-    font-size: 14px;
-    padding: 5px 10px;
-    margin: 10px;
-    border-radius: 30px;
-    border: 1px solid white;
-    font-weight: bold;
-    background-color: black ;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.language:hover {
-    transform: scale(1.1);
-    border: 2px solid white;
-
-}
 /* **************************************************************************************** */
 .right {
     width: calc(100% - 23vw);
@@ -374,7 +321,6 @@ header {
     opacity: 0;
     transition: opacity 0.3s ease;
     height: 100%;
-    z-index: 9999;
 }
 
 .right:hover .custom-scrollbar {
@@ -598,8 +544,19 @@ header {
 }
 
 .oureditor-section h2{
-    padding: 0 22px;
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 0 2px;
     clear: both;
+}
+
+.oureditor-section .discography{
+    font-size: 15px;
+    color:#989797;
+}
+
+.discography{
+    margin-right: 45px;
 }
 
 .oureditor-section h2:hover{
@@ -626,7 +583,7 @@ header {
     width: 140px;
     margin: 5px;
     padding: 0 0 0 22px;
-    position: re;
+    position: relative;
     overflow: hidden;
     border-radius: 10px;
     display: flex;
@@ -638,6 +595,11 @@ header {
     cursor: pointer;
 }
 
+.spotifyplaylists-image {
+    position: relative;
+    display: inline-block;
+}
+
 .spotifyplaylists-image img {
     width: 100%;
     height: 100%;
@@ -646,7 +608,7 @@ header {
 
 .play-button {
     position: absolute;
-    bottom: 140px;
+    bottom: 10px;
     right: 10px;
     background-color: #1ed760;
     color: black;
@@ -668,23 +630,19 @@ header {
 }
 
 .spotifyplaylists, .name p{
-    margin: 20px 2px;
+    margin: 5px 2px;
     color: #aaaaaa;
+
+}
+
+.spotifyplaylists, .name span{
+    margin-bottom: 30px;
 }
 
 .content-wrapper {
     position: relative;
     clear: both;
 }
-
-.Music-Player{
-    position: sticky; /* Makes the header sticky */
-    bottom: 0; /* Sticks the header to the top of the viewport */
-    z-index: 1000;
-    padding: 2px;
-    background-color: black;
-}
-
 
 footer{
     margin-top: 30px;
@@ -721,10 +679,66 @@ footer .sociallogo{
     gap: 25px;
 }
 
+.licence {
+    font-size: 12px;
+    color: #b3b3b3;
+    z-index: 10;
+    margin-top: 50px;
+    display: flex;
+}
+
+.licence ul {
+    padding: 0 0 15px 10px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 12px;
+}
+
+.licence ul li {
+    margin: 0;
+}
+
+.licence ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.licence ul li a:hover {
+    text-decoration: underline;
+}
+
+.cookies{
+    margin-bottom: 20px;
+    margin-left: 10px;
+    color: white;
+}
+
 .rights{
-    padding: 0 0 50px 35px;
+    padding: 0 0 100px 35px;
     font-size: 14px;
     color: #a9b3b3;
     font-weight: 600;
-  
+}
+
+
+.Music-Player{
+   width: 100%;
+   position: absolute;
+   background-color: #000000;
+   bottom: 0;
+   height: 10%;
+   z-index: 2;
+   display: flex;
+   justify-content: center; /* Centers horizontally */
+   align-items: center;
+}
+
+.icons{
+    height: 20px;
+    width: 20px;
+    display: flex;
+    gap: 15px;
+    margin-left: 30px;
 }
