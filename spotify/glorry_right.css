@@ -384,7 +384,7 @@ header {
 .artist-info .profile-img {
     width: 25px;
     height: 25px; 
-    padding-top: 40px;
+    /* padding-top: 40px; */
     border-radius: 50%; /* Make the image circular */
     object-fit: cover; /* Ensure the image fills the circle */
   }
@@ -393,13 +393,13 @@ header {
 .artist-info p:first-of-type{
     font-size: 14px;
     color: #ffffff; /* Subtle text color */
-    padding-top: 40px;
+    /* padding-top: 40px; */
     font-weight: 700;
   }
 
 .artist-info p:nth-of-type(2){
     font-size: 14px;
-    padding-top: 40px;
+    /* padding-top: 40px; */
     color: #b2b2b2; /* Subtle text color */
 }
 
@@ -722,23 +722,134 @@ footer .sociallogo{
     font-weight: 600;
 }
 
-
-.Music-Player{
-   width: 100%;
-   position: absolute;
-   background-color: #000000;
-   bottom: 0;
-   height: 10%;
-   z-index: 2;
-   display: flex;
-   justify-content: center; /* Centers horizontally */
-   align-items: center;
+.Music-Player {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 34px; /* Increased height to fit all elements */
+    background-color: #000;
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
 }
 
-.icons{
+.songinfo {
+    color: white;
+    font-size: 16px;
+    width: 30%;
+    text-align: left;  /* Aligns the text to the left */
+    justify-content: flex-start;  /* Ensure the content is aligned to the left */
+}
+
+.controls {
+    position: absolute;
+    display: flex;
+    gap: 30px;
+    width: 35%;
+    justify-content: center;
+    margin-left: 30%;
+}
+
+#playPauseButton {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+#playPauseButton.pause {
+    display: none; /* Hide the pause icon by default */
+}
+
+#playPauseButton.play {
+    display: inline-block; /* Show the play icon */
+}
+
+.controls img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.controls img:hover {
+    transform: scale(1.1);
+}
+
+.seekbar-container {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;  /* Align items horizontally (in a row) */
+    width: 60%;
+    margin-bottom: 10px;
+    margin-left: 30%;
+    justify-content: flex-start;  /* Align items to the left */
+}
+
+.songtime {
+    padding-left: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.seekbar {
+    position: relative;
+    height: 2px;
+    width: 60%;
+    background-color: #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.seekbar .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #ffffff;
+    width: 0%;
+    border-radius: 5px;
+}
+
+.seekbar .progress:hover {
+    background-color: #1ed760;
+}
+
+.seekbar .circle {
+    position: absolute;
+    top: -5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    transition: left 0.1s;
+}
+
+
+.volume-control-container {
+    position: absolute;  
+    right: 100px;  
+    bottom: 12px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.volume-label {
+    gap: 5px;
     height: 20px;
     width: 20px;
-    display: flex;
-    gap: 15px;
-    margin-left: 30px;
+    color: white;
+    margin-right: 10px;
 }
+
+.volume-control {
+    width: 100px;  
+    height: 4px;  
+    z-index: 5;
+} 
+
+
