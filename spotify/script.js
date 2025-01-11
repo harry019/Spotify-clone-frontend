@@ -7,74 +7,64 @@ const songs = {
     "Bonita": "Bonita - Glory 128 Kbps.mp3"
 };
 
-// Get all song title elements
+// UI Elements
 const songTitles = document.querySelectorAll(".song-title");
-
-// Create an audio element
 const audioPlayer = new Audio();
+const songInfoDiv = document.querySelector(".songinfo");
 const seekBar = document.querySelector(".seekbar");
 const circle = document.querySelector(".circle");
 const volumeControl = document.querySelector(".volume-control");
-const songInfoDiv = document.querySelector(".songinfo");
-const playPauseButton = document.querySelector("#playPauseButton"); // Single play/pause button
+const playPauseButton = document.querySelector("#playPauseButton");
 const forwardButton = document.querySelector(".forward");
 const previousButton = document.querySelector(".previous");
 const shuffleButton = document.querySelector(".shuffle");
 const loopButton = document.querySelector(".loop");
 
-// Set the initial state of the button (should show "Play" initially)
+// Play/pause state
 let isPlaying = false;
-playPauseButton.src = "./Pictures_and_logos/play.svg"; // Initially show the play button
+playPauseButton.src = "./Pictures_and_logos/play.svg"; // Initial state
+
+// Loop state
+let isLooping = false;
 
 // Add click event listeners to song titles
 songTitles.forEach((titleElement) => {
     titleElement.addEventListener("click", () => {
-        const songName = titleElement.textContent.trim(); // Get the clicked song name
-
+        const songName = titleElement.textContent.trim();
         if (songs[songName]) {
-            const songPath = `http://127.0.0.1:5500/songs/${songs[songName]}`; // Construct the file path
-
+            const songPath = `http://127.0.0.1:5500/spotify/songs/${songs[songName]}`; 
             if (audioPlayer.src !== songPath) {
-                audioPlayer.src = songPath; // Set the new song source
-                updateSongInfo(songName); // Update song info in UI
+                audioPlayer.src = songPath;
+                updateSongInfo(songName);
             }
-
-            audioPlayer.play(); // Play the song
+            audioPlayer.play();
             isPlaying = true;
-            playPauseButton.src = "./Pictures_and_logos/pause.svg"; // Show pause button
-        } else {
-            console.error(`Audio file for '${songName}' not found!`);
+            playPauseButton.src = "./Pictures_and_logos/pause.svg";
+
+            // Set active state
+            songTitles.forEach(s => s.classList.remove("active"));
+            titleElement.classList.add("active");
         }
     });
 });
 
-// Automatically play the next song when the current song ends
-audioPlayer.addEventListener("ended", () => {
-    let currentIndex = getCurrentSongIndex();
-    if (currentIndex !== -1 && currentIndex < songTitles.length - 1) {
-        songTitles[currentIndex + 1].click();
-    } else {
-        console.log("End of playlist.");
-    }
-});
-
-// Play/pause toggle button functionality
+// Play/Pause button functionality
 playPauseButton.addEventListener("click", () => {
     if (isPlaying) {
-        audioPlayer.pause();
-        playPauseButton.src = "./Pictures_and_logos/play.svg"; // Change icon to play
+        audioPlayer.pause(); // Pause the audio
+        playPauseButton.src = "./Pictures_and_logos/play.svg"; // Change button icon to play
     } else {
-        audioPlayer.play();
-        playPauseButton.src = "./Pictures_and_logos/pause.svg"; // Change icon to pause
+        audioPlayer.play(); // Play the audio
+        playPauseButton.src = "./Pictures_and_logos/pause.svg"; // Change button icon to pause
     }
-    isPlaying = !isPlaying; // Toggle the play/pause state
+    isPlaying = !isPlaying; // Toggle the playing state
 });
 
 // Forward button functionality
 forwardButton.addEventListener("click", () => {
     let currentIndex = getCurrentSongIndex();
     if (currentIndex !== -1) {
-        let nextIndex = (currentIndex + 1) % songTitles.length; // Cycle through to the next song
+        let nextIndex = (currentIndex + 1) % songTitles.length;
         songTitles[nextIndex].click();
     }
 });
@@ -83,26 +73,34 @@ forwardButton.addEventListener("click", () => {
 previousButton.addEventListener("click", () => {
     let currentIndex = getCurrentSongIndex();
     if (currentIndex !== -1) {
-        let prevIndex = (currentIndex - 1 + songTitles.length) % songTitles.length; // Cycle through to the previous song
+        let prevIndex = (currentIndex - 1 + songTitles.length) % songTitles.length;
         songTitles[prevIndex].click();
     }
 });
 
 // Shuffle button functionality
 shuffleButton.addEventListener("click", () => {
-    const randomIndex = Math.floor(Math.random() * songTitles.length);
-    songTitles[randomIndex].click(); // Play a random song
+    let currentIndex = getCurrentSongIndex();
+    let randomIndex;
+    do {
+        randomIndex = Math.floor(Math.random() * songTitles.length);
+    } while (randomIndex === currentIndex);
+    songTitles[randomIndex].click();
 });
 
 // Loop button functionality
-let isLooping = false;
 loopButton.addEventListener("click", () => {
     isLooping = !isLooping;
     audioPlayer.loop = isLooping;
     loopButton.classList.toggle("active", isLooping);
 });
 
-// Function to update the song info in the UI
+// Function to get the current song index
+function getCurrentSongIndex() {
+    return Array.from(songTitles).findIndex(song => song.classList.contains("active"));
+}
+
+// Function to update the song info
 function updateSongInfo(songName) {
     songInfoDiv.textContent = `Now Playing: ${songName}`;
 }
@@ -124,7 +122,7 @@ seekBar.addEventListener("click", (event) => {
 
 function updateProgressBar(progress) {
     const progressBar = document.querySelector(".seekbar .progress");
-    progressBar.style.width = `${progress}%`; // Update progress bar width
+    progressBar.style.width = `${progress}%`; 
 }
 
 function updateSongTime() {
@@ -141,7 +139,8 @@ function formatTime(seconds) {
     return `${mins}:${secs}`;
 }
 
-// Volume Control functionality
+
+// Volume control
 volumeControl.addEventListener("input", (event) => {
     audioPlayer.volume = event.target.value / 100;
 });
