@@ -32,7 +32,10 @@ songTitles.forEach((titleElement) => {
     titleElement.addEventListener("click", () => {
         const songName = titleElement.textContent.trim();
         if (songs[songName]) {
-            const songPath = `http://127.0.0.1:5500/spotify/songs/${songs[songName]}`; 
+            const songPath = `https://sppoootify.freewebhostmost.com/songs/${songs[songName]}`;
+            console.log("Song path: ", songPath);
+            // const songPath = `http://127.0.0.1:5500/spotify/songs/${songs[songName]}`; 
+
             if (audioPlayer.src !== songPath) {
                 audioPlayer.src = songPath;
                 updateSongInfo(songName);
