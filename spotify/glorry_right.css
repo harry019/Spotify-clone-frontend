@@ -852,4 +852,169 @@ footer .sociallogo{
     z-index: 5;
 } 
 
+/* Small devices (phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+    /* Header Modifications */
+    header {
+        height: auto;
+        padding: 10px 5px;
+    }
 
+    .middlenav {
+        display: none; /* Hide search on mobile */
+    }
+
+    .login-signup {
+        gap: 15px;
+    }
+
+    #login {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Hide Library Section */
+    .left {
+        display: none; /* Completely hide the library section */
+    }
+
+    /* Adjust Right Section */
+    .right {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    /* Album Header */
+    .album-header {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .album-title p:nth-of-type(2) {
+        font-size: 42px;
+    }
+
+    .artist-info {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Buttons Section */
+    .buttons {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    /* Song List */
+    .song-list {
+        padding: 10px;
+    }
+
+    .song-list-header, .song-item {
+        margin: 10px 5px;
+    }
+
+    .song-info {
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Playlists Grid */
+    .playlist-from-our-editor {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .spotifyplaylists {
+        width: calc(50% - 20px);
+        padding: 0 10px;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        gap: 30px;
+        margin: 20px 10px;
+    }
+
+    .footer-header {
+        width: 100%;
+    }
+
+    .sociallogo {
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .licence ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Music Player */
+    .Music-Player {
+        height: auto;
+        padding: 10px;
+    }
+
+    .controls {
+        position: static;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .seekbar-container {
+        width: 100%;
+        margin: 0px;
+        margin-left: 30px;
+        position: static;
+    }
+
+    .volume-control-container {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+    }
+}
+
+/* Extra Small devices (phones, 480px and down) */
+@media only screen and (max-width: 480px) {
+    .album-title p:nth-of-type(2) {
+        font-size: 32px;
+    }
+
+    .spotifyplaylists {
+        width: calc(100% - 20px); /* Single column for very small devices */
+    }
+
+    .song-info {
+        max-width: 150px;
+    }
+
+    #login, #signup {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .song-item {
+        padding: 8px 0;
+    }
+
+    .duration {
+        font-size: 12px;
+    }
+}
