@@ -1,11 +1,11 @@
 // Mapping song titles to audio file names
 const songs = {
-    "Millionaire": "/Millionaire.mp3",
-    "Jatt Mehkma": "/Jatt Mehkma - Glory 128 Kbps.mp3",
-    "High On Me": "/High On Me - Glory 128 Kbps.mp3",
-    "Fuck Them": "/Fuck Them - Glory 128 Kbps.mp3",
-    "Bonita": "/Bonita - Glory 128 Kbps.mp3",
-    "Payal": "/Payal - Glory 320 Kbps.mp3"
+    "Millionaire": "songs/Millionaire.mp3",
+    "Jatt Mehkma": "songs/Jatt Mehkma - Glory 128 Kbps.mp3",
+    "High On Me": "songs/High On Me - Glory 128 Kbps.mp3",
+    "Fuck Them": "songs/Fuck Them - Glory 128 Kbps.mp3",
+    "Bonita": "songs/Bonita - Glory 128 Kbps.mp3",
+    "Payal": "songs/Payal - Glory 320 Kbps.mp3"
 };
 
 // UI Elements
@@ -23,7 +23,7 @@ const loopButton = document.querySelector(".loop");
 
 // Play/pause state
 let isPlaying = false;
-playPauseButton.src = "/Pictures_and_logos//play.svg"; // Initial state
+playPauseButton.src = "Pictures_and_logos/play.svg"; // Initial state
 
 // Loop state
 let isLooping = false;
@@ -43,7 +43,7 @@ songTitles.forEach((titleElement) => {
             }
             audioPlayer.play();
             isPlaying = true;
-            playPauseButton.src = "/Pictures_and_logos//pause.svg";
+            playPauseButton.src = "Pictures_and_logos/pause.svg";
 
             // Set active state
             songTitles.forEach(s => s.classList.remove("active"));
@@ -56,10 +56,10 @@ songTitles.forEach((titleElement) => {
 playPauseButton.addEventListener("click", () => {
     if (isPlaying) {
         audioPlayer.pause(); // Pause the audio
-        playPauseButton.src = "/Pictures_and_logos//play.svg"; // Change button icon to play
+        playPauseButton.src = "Pictures_and_logos/play.svg"; // Change button icon to play
     } else {
         audioPlayer.play(); // Play the audio
-        playPauseButton.src = "/Pictures_and_logos//pause.svg"; // Change button icon to pause
+        playPauseButton.src = "Pictures_and_logos/pause.svg"; // Change button icon to pause
     }
     isPlaying = !isPlaying; // Toggle the playing state
 });
