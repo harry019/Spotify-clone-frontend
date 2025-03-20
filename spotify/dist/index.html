@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon-DuyINEyo.ico">
+    <link rel="stylesheet" href="/assets/script-CsUC29pb.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-BJ_mVdV8.css">
+</head>
+
+<body class="bg-black">
+    <header>
+        <div class="top bg-black">
+            <div class="menu-toggle">
+                <img class="hamburger-icon" src="data:image/svg+xml,%3cdiv%20class='menu-toggle'%3e%3csvg%20class='hamburger-icon'%20viewBox='0%200%2024%2024'%20fill='white'%20width='24'%20height='24'%3e%3cpath%20d='M3%2018h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z'/%3e%3c/svg%3e%3c/div%3e" alt="Menu">
+            </div>
+            <div class="logo">
+                <img class="invert" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20role='img'%20viewBox='0%200%2024%2024'%20aria-label='Spotify'%20aria-hidden='false'%20height='32'%20data-encore-id='logoSpotify'%20class='Svg-sc-6c3c1v-0%20dDJltW'%3e%3ctitle%3eSpotify%3c/title%3e%3cpath%20d='M13.427.01C6.805-.253%201.224%204.902.961%2011.524.698%2018.147%205.853%2023.728%2012.476%2023.99c6.622.263%2012.203-4.892%2012.466-11.514S20.049.272%2013.427.01m5.066%2017.579a.717.717%200%200%201-.977.268%2014.4%2014.4%200%200%200-5.138-1.747%2014.4%2014.4%200%200%200-5.42.263.717.717%200%200%201-.338-1.392c1.95-.474%203.955-.571%205.958-.29%202.003.282%203.903.928%205.647%201.92a.717.717%200%200%201%20.268.978m1.577-3.15a.93.93%200%200%201-1.262.376%2017.7%2017.7%200%200%200-5.972-1.96%2017.7%2017.7%200%200%200-6.281.238.93.93%200%200%201-1.11-.71.93.93%200%200%201%20.71-1.11%2019.5%2019.5%200%200%201%206.94-.262%2019.5%2019.5%200%200%201%206.599%202.165c.452.245.62.81.376%201.263m1.748-3.551a1.147%201.147%200%200%201-1.546.488%2021.4%2021.4%200%200%200-6.918-2.208%2021.4%2021.4%200%200%200-7.259.215%201.146%201.146%200%200%201-.456-2.246%2023.7%2023.7%200%200%201%208.034-.24%2023.7%2023.7%200%200%201%207.657%202.445c.561.292.78.984.488%201.546m13.612-.036-.832-.247c-1.67-.495-2.14-.681-2.14-1.353%200-.637.708-1.327%202.264-1.327%201.539%200%202.839.752%203.51%201.31.116.096.24.052.24-.098V6.935c0-.097-.027-.15-.098-.203-.83-.62-2.272-1.07-3.723-1.07-2.953%200-4.722%201.68-4.722%203.59%200%202.157%201.371%202.91%203.626%203.546l.973.274c1.689.478%201.998.902%201.998%201.556%200%201.097-.831%201.433-2.07%201.433-1.556%200-3.457-.911-4.35-2.025-.08-.098-.177-.053-.177.062v2.423c0%20.097.01.141.08.22.743.814%202.52%201.53%204.59%201.53%202.546%200%204.456-1.485%204.456-3.784%200-1.787-1.052-2.865-3.625-3.635m10.107-1.76c-1.68%200-2.653%201.026-3.219%202.052V9.376c0-.08-.044-.124-.124-.124h-2.22c-.079%200-.123.044-.123.124V20.72c0%20.08.044.124.124.124h2.22c.079%200%20.123-.044.123-.124v-4.536c.566%201.025%201.521%202.034%203.237%202.034%202.264%200%203.89-1.955%203.89-4.581s-1.644-4.545-3.908-4.545m-.654%206.986c-1.185%200-2.211-1.167-2.618-2.458.407-1.362%201.344-2.405%202.618-2.405%201.211%200%202.051.92%202.051%202.423s-.84%202.44-2.051%202.44m40.633-6.826h-2.264c-.08%200-.115.017-.15.097l-2.282%205.483-2.29-5.483c-.035-.08-.07-.097-.15-.097h-3.661v-.584c0-.955.645-1.397%201.476-1.397.496%200%201.035.256%201.415.486.089.053.15-.008.115-.088l-.796-1.901a.26.26%200%200%200-.124-.133c-.389-.203-1.025-.38-1.644-.38-1.875%200-2.954%201.432-2.954%203.254v.743h-1.503c-.08%200-.124.044-.124.124v1.768c0%20.08.044.124.124.124h1.503v6.668c0%20.08.044.123.124.123h2.264c.08%200%20.124-.044.124-.123v-6.668h1.936l2.812%206.11-1.512%203.325c-.044.098.009.142.097.142h2.414c.08%200%20.116-.018.15-.097l4.997-11.355c.035-.08-.009-.141-.097-.141M54.964%209.04c-2.865%200-4.837%202.025-4.837%204.616%200%202.573%201.971%204.616%204.837%204.616%202.856%200%204.846-2.043%204.846-4.616%200-2.591-1.99-4.616-4.846-4.616m.008%207.065c-1.37%200-2.343-1.043-2.343-2.45%200-1.405.973-2.449%202.343-2.449%201.362%200%202.335%201.043%202.335%202.45%200%201.406-.973%202.45-2.335%202.45m33.541-6.334a1.24%201.24%200%200%200-.483-.471%201.4%201.4%200%200%200-.693-.17q-.384%200-.693.17a1.24%201.24%200%200%200-.484.471q-.174.302-.174.681%200%20.375.174.677.175.3.484.471t.693.17.693-.17.483-.471.175-.676q0-.38-.175-.682m-.211%201.247a1%201%200%200%201-.394.39%201.15%201.15%200%200%201-.571.14%201.16%201.16%200%200%201-.576-.14%201%201%200%200%201-.391-.39%201.14%201.14%200%200%201-.14-.566q0-.316.14-.562t.391-.388.576-.14q.32%200%20.57.14.253.141.395.39t.142.565q0%20.312-.142.56m-19.835-5.78c-.85%200-1.468.6-1.468%201.396s.619%201.397%201.468%201.397c.866%200%201.485-.6%201.485-1.397%200-.796-.619-1.397-1.485-1.397m19.329%205.19a.31.31%200%200%200%20.134-.262q0-.168-.132-.266-.132-.099-.381-.099h-.588v1.229h.284v-.489h.154l.374.489h.35l-.41-.518a.5.5%200%200%200%20.215-.084m-.424-.109h-.26v-.3h.27q.12%200%20.184.036a.12.12%200%200%201%20.065.116.12.12%200%200%201-.067.111.4.4%200%200%201-.192.037M69.607%209.252h-2.263c-.08%200-.124.044-.124.124v8.56c0%20.08.044.123.124.123h2.263c.08%200%20.124-.044.124-.123v-8.56c0-.08-.044-.124-.124-.124m-3.333%206.605a2.1%202.1%200%200%201-1.053.257c-.725%200-1.185-.425-1.185-1.362v-3.484h2.211c.08%200%20.124-.044.124-.124V9.376c0-.08-.044-.124-.124-.124h-2.21V6.944c0-.097-.063-.15-.15-.08l-3.954%203.113c-.053.044-.07.088-.07.16v1.007c0%20.08.044.124.123.124h1.539v3.855c0%202.087%201.203%203.06%202.918%203.06.743%200%201.46-.194%201.884-.442.062-.035.07-.07.07-.133v-1.68c0-.088-.044-.115-.123-.07'%20transform='translate(-0.95,0)'%3e%3c/path%3e%3c/svg%3e" alt="Spotify Logo">
+            </div>
+            <div class="middlenav">
+                <div class="circle-bg"></div>
+                <img class="invert home-icon" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20data-encore-id='icon'%20role='img'%20aria-hidden='true'%20viewBox='0%200%2024%2024'%20class='Svg-sc-ytk21e-0%20bneLcE'%3e%3cpath%20d='M13.5%201.515a3%203%200%200%200-3%200L3%205.845a2%202%200%200%200-1%201.732V21a1%201%200%200%200%201%201h6a1%201%200%200%200%201-1v-6h4v6a1%201%200%200%200%201%201h6a1%201%200%200%200%201-1V7.577a2%202%200%200%200-1-1.732l-7.5-4.33z'%3e%3c/path%3e%3c/svg%3e" alt="home">
+                <div class="search-container">
+                    <img class="invert search-icon" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20data-encore-id='icon'%20role='img'%20aria-hidden='true'%20data-testid='search-icon'%20class='Svg-sc-ytk21e-0%20bHdpig%20M9l40ptEBXPm03dU3X1k'%20viewBox='0%200%2024%2024'%3e%3cpath%20d='M10.533%201.27893C5.35215%201.27893%201.12598%205.41887%201.12598%2010.5579C1.12598%2015.697%205.35215%2019.8369%2010.533%2019.8369C12.767%2019.8369%2014.8235%2019.0671%2016.4402%2017.7794L20.7929%2022.132C21.1834%2022.5226%2021.8166%2022.5226%2022.2071%2022.132C22.5976%2021.7415%2022.5976%2021.1083%2022.2071%2020.7178L17.8634%2016.3741C19.1616%2014.7849%2019.94%2012.7634%2019.94%2010.5579C19.94%205.41887%2015.7138%201.27893%2010.533%201.27893ZM3.12598%2010.5579C3.12598%206.55226%206.42768%203.27893%2010.533%203.27893C14.6383%203.27893%2017.94%206.55226%2017.94%2010.5579C17.94%2014.5636%2014.6383%2017.8369%2010.533%2017.8369C6.42768%2017.8369%203.12598%2014.5636%203.12598%2010.5579Z'%3e%3c/path%3e%3c/svg%3e" alt="search">
+                    <input type="text" placeholder="What do you want to play?">
+                    <img class="invert browser-icon" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20data-encore-id='icon'%20role='img'%20aria-hidden='true'%20viewBox='0%200%2024%2024'%20class='Svg-sc-ytk21e-0%20bneLcE'%3e%3cpath%20d='M4%202a1%201%200%200%201%201-1h14a1%201%200%200%201%201%201v4H4V2zM1.513%209.37A1%201%200%200%201%202.291%209H21.71a1%201%200%200%201%20.978%201.208l-2.17%2010.208A2%202%200%200%201%2018.562%2022H5.438a2%202%200%200%201-1.956-1.584l-2.17-10.208a1%201%200%200%201%20.201-.837zM12%2017.834c1.933%200%203.5-1.044%203.5-2.333%200-1.289-1.567-2.333-3.5-2.333S8.5%2014.21%208.5%2015.5c0%201.289%201.567%202.333%203.5%202.333z'%3e%3c/path%3e%3c/svg%3e" alt="browser">
+                </div>
+            </div>
+            <div class="login-signup">
+                <p id="signup">Sign up</p>
+                <button id="login">Log in</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container flex">
+            <div class="left border bg-library-grey rounded menu-closed">
+                <!-- Sticky Header -->
+                <div class="library-header">
+                    <div class="library">
+                        <img class="invert library-icon" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20data-encore-id='icon'%20role='img'%20aria-hidden='true'%20viewBox='0%200%2024%2024'%20class='Svg-sc-ytk21e-0%20bneLcE'%3e%3cpath%20d='M3%2022a1%201%200%200%201-1-1V3a1%201%200%200%201%202%200v18a1%201%200%200%201-1%201zM15.5%202.134A1%201%200%200%200%2014%203v18a1%201%200%200%200%201%201h6a1%201%200%200%200%201-1V6.464a1%201%200%200%200-.5-.866l-6-3.464zM9%202a1%201%200%200%200-1%201v18a1%201%200%201%200%202%200V3a1%201%200%200%200-1-1z'%3e%3c/path%3e%3c/svg%3e" alt="Library">
+                        <p class="your-library">Your Library</p>
+                        <img class="invert add-icon" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20data-encore-id='icon'%20role='img'%20aria-hidden='true'%20viewBox='0%200%2016%2016'%20class='Svg-sc-ytk21e-0%20dYnaPI'%3e%3cpath%20d='M15.25%208a.75.75%200%200%201-.75.75H8.75v5.75a.75.75%200%200%201-1.5%200V8.75H1.5a.75.75%200%200%201%200-1.5h5.75V1.5a.75.75%200%200%201%201.5%200v5.75h5.75a.75.75%200%200%201%20.75.75z'%3e%3c/path%3e%3c/svg%3e" alt="Add">
+                    </div>
+                </div>
+
+                <!-- Scrollable Content -->
+                <div class="scrollable-content">
+                    <div class="create-playlist bg-library2-grey rounded">
+                        <p class="p1">Create your first playlist</p>
+                        <p class="p2">It's easy, we'll help you</p>
+                        <button>Create playlist</button>
+                    </div>
+                    <div class="create-podcasts bg-library2-grey rounded">
+                        <p class="p3">Let's find some podcasts to follow</p>
+                        <p class="p4">We'll keep you updated on new episodes</p>
+                        <button>Browse podcasts</button>
+                    </div>
+                </div>
+                <!-- Footer -->
+                <div class="licence">
+                    <ul>
+                        <li>Legal</li>
+                        <li>Safety&Privacy Center</li>
+                        <li>Privacy Policy</li>
+                        <li>Cookies</li>
+                        <li>About Ads</li>
+                        <li>Accessibility</li>
+                    </ul>
+                    <div class="cookies">Cookies</div>
+                    <button class="language">🌐English</button>
+                </div>
+            </div>
+
+
+
+            <!-- Right Section -->
+            <div class="right border bg-cards-grey rounded">
+                <section class="artist-section">
+                    <div class="heading">
+                        <h2>Popular artists</h2>
+                        <h2 class="show-all">show all</h2>
+                    </div>
+                    <div class="artist-container">
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <img src="https://i.scdn.co/image/ab67616100005174cb6926f44f620555ba444fca"
+                                    alt="pritam">
+                                <div class="play-button">▶</div>
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="name">
+                                <p>Pritam</p>
+                                <span>Artist</span>
+                            </div>
+                        </div>
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <img src="https://i.scdn.co/image/ab67616100005174bd6fbc7d0973cc33940781ad"
+                                    alt="Sachin-Jigar">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Sachin-Jigar</p>
+                                <span>Artist</span>
+                            </div>
+                        </div>
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <img src="/assets/arjit-B_bLTMMr.jpg" alt="Arjit Singh">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Arjit Singh</p>
+                                <span>Artist</span>
+                            </div>
+                        </div>
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <img src="https://i.scdn.co/image/ab67616100005174b19af0ea736c6228d6eb539c"
+                                    alt="A.R.Rahman">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>A.R. Rahman</p>
+                                <span>Artist</span>
+                            </div>
+                        </div>
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <img src="https://i.scdn.co/image/ab6761610000517490b6c3d093f9b02aad628eaf"
+                                    alt="Vishal-Shekhar">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Vishal-Shekhar</p>
+                                <span>Artist</span>
+                            </div>
+                        </div>
+
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <img src="https://i.scdn.co/image/ab67616100005174c40600e02356cc86f0debe84"
+                                    alt="Atif Aslam">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Atif Aslam</p>
+                                <span>Artist</span>
+                            </div>
+                        </div>
+
+                        <div class="artist-card">
+                            <div class="artist-image">
+                                <img src="https://i.scdn.co/image/ab676161000051740f0be2054fe9594026a6b843"
+                                    alt="Atif Aslam">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Anirudh Ravichander</p>
+                                <span>Artist</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="album-section">
+                    <div class="heading">
+                        <h2>Popular albums and singles</h2>
+                        <h2 class="show-all">show all</h2>
+                    </div>
+                    <div class="album-container">
+                        <div class="album-card">
+                            <div class="album-image">
+                                <a href="glorry_right.html">
+                                    <img src="https://i.scdn.co/image/ab67616d00001e02aad3f4b601ae8763b3fc4e88"
+                                    alt="album 1">
+                                </a>    
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>GLORY</p>
+                                <span>Yo Yo Honey Singh</span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-image">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0209c9bf421422262c368009d6"
+                                    alt="album 2">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Patandar</p>
+                                <span>Arjan Dhillon, Mxrci</span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-image">
+                                <img src="https://i.scdn.co/image/ab67616d00001e026404721c1943d5069f0805f3"
+                                    alt="album 3">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Aashiqui 2</p>
+                                <span>Mithoon, Ankit Tiwari, Jeet Gannguli</span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-image">
+                                <img src="https://i.scdn.co/image/ab67616d00001e0272a77d038887cdc425f5ee55"
+                                    alt="album 4">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Jo Tum Mere Ho</p>
+                                <span>Anuv Jain</span>
+                            </div>
+                        </div>
+                        <div class="album-card">
+                            <div class="album-image">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02bb25239324c4e16ae01fda36"
+                                    alt="album 5">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Making Memories</p>
+                                <span>Karan Aujla, Ikky</span>
+                            </div>
+                        </div>
+
+                        <div class="album-card">
+                            <div class="album-image">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02707ea5b8023ac77d31756ed4"
+                                    alt="album 6">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Yeh Jawaani Hai Deewani</p>
+                                <span>Pritam</span>
+                            </div>
+                        </div>
+
+                        <div class="album-card">
+                            <div class="album-image">
+                                <img src="https://i.scdn.co/image/ab67616d00001e025f3ede47954a93aa03efe5f9"
+                                    alt="album 6">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>ANIMAL</p>
+                                <span>Manan Bhardwaj, Vishal Mishra, Jaani</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="radio-section">
+                    <div class="heading">
+                        <h2>Popular radio</h2>
+                        <h2 class="show-all">show all</h2>
+                    </div>
+                    <div class="radio-container">
+                        <div class="radio-card">
+                            <div class="radio-image">
+                                <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4YRxDV8wJFPHPTeXepOstw/en"
+                                    alt="Radio1">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>With Sachin-Jigar, Amit Trivedi, Mithoon and more</p>
+                            </div>
+
+                        </div>
+                        <div class="radio-card">
+                            <div class="radio-image">
+                                <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/2FKWNmZWDBZR4dE5KX4plR/en"
+                                    alt="Radio 2">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>With Karan Aujla, Shubh, AP Dhillon and more</p>
+                            </div>
+                        </div>
+                        <div class="radio-card">
+                            <div class="radio-image">
+                                <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4fEkbug6kZzzJ8eYX6Kbbp/en-GB"
+                                    alt="Radio 3">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>With Pritam, Mohit Chauhan, Shaan and more</p>
+                            </div>
+                        </div>
+                        <div class="radio-card">
+                            <div class="radio-image">
+                                <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/70B80Lwx2sxti0M1Ng9e8K/en"
+                                    alt="Radio 4">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>With Uttam Singh, Abhijeet, Lata Mangeshkar and more</p>
+                            </div>
+                        </div>
+                        <div class="radio-card">
+                            <div class="radio-image">
+                                <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0oOet2f43PA68X5RxKobEy/en-GB"
+                                    alt="Radio 5">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>With A.R. Rahman, Vishal-Shekhar, Atif Aslam and more</p>
+                            </div>
+                        </div>
+
+                        <div class="radio-card">
+                            <div class="radio-image">
+                                <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/4PULA4EFzYTrxYvOVlwpiQ/en"
+                                    alt="Radio 6">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>With Tegi Pannu, AP Dhillon, Shubh and more</p>
+                            </div>
+                        </div>
+
+                        <div class="radio-card">
+                            <div class="radio-image">
+                                <img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0GF4shudTAFv8ak9eWdd4Y/en"
+                                    alt="Radio 6">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>With Mukesh, Hemant Kumar, Tabassum and more</p>
+                            </div>
+                        </div>
+
+                </section>
+
+
+                <section class='Featured-Chart-section'>
+                    <div class="heading">
+                        <h2>Featured Charts</h2>
+                        <h2 class="show-all">show all</h2>
+                    </div>
+                    <div class="featured-chart-container">
+                        <div class="featured-cards">
+                            <div class="featured-image">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg"
+                                    alt="chart-1">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Your weekly update of the most played tracks right now - Global.</p>
+                            </div>
+                        </div>
+                        <div class="featured-cards">
+                            <div class="featured-image">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_us_default.jpg"
+                                    alt="Chart-2">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Your weekly update of the most played tracks right now - USA.</p>
+                            </div>
+                        </div>
+                        <div class="featured-cards">
+                            <div class="featured-image">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg"
+                                    alt="Chart-3">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Your daily update of the most played tracks right now - Global.</p>
+                            </div>
+                        </div>
+                        <div class="featured-cards">
+                            <div class="featured-image">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_us_default.jpg"
+                                    alt="Chart-4">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Your daily update of the most played tracks right now - USA.</p>
+                            </div>
+                        </div>
+                        <div class="featured-cards">
+                            <div class="featured-image">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/viral/daily/region_global_default.jpg"
+                                    alt="chart-5">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Your daily update of the most viral tracks right now - Global.</p>
+                            </div>
+                        </div>
+                        <div class="featured-cards">
+                            <div class="featured-image">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/viral/daily/region_us_default.jpg"
+                                    alt="Chart-6">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Your daily update of the most viral tracks right now - USA.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="oureditor-section">
+                    <div class="heading">
+                        <h2>Playlist from our editor</h2>
+                        <h2 class="show-all">show all</h2>
+                    </div>
+                    <div class="playlist-from-our-editor">
+                        <div class="spotifyplaylists">
+                            <div class="spotifyplaylists-image">
+                                <img src="https://i.scdn.co/image/ab67706f00000002c6486e03a346238d10690ea6"
+                                    alt="playlist-1">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>The hottest 50. Cover: Gracie Abrams</p>
+                            </div>
+                        </div>
+                        <div class="spotifyplaylists">
+                            <div class="spotifyplaylists-image">
+                                <img src="https://i.scdn.co/image/ab67706f0000000277c91d9f09e4deb8a2ede4cb"
+                                    alt="playlist-2">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>The biggest Christmas songs of all time.</p>
+                            </div>
+                        </div>
+                        <div class="spotifyplaylists">
+                            <div class="spotifyplaylists-image">
+                                <img src="https://i.scdn.co/image/ab67706f0000000258cb9399d2d48a524106c0e4"
+                                    alt="playlist-3">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>iykyk</p>
+                            </div>
+                        </div>
+                        <div class="spotifyplaylists">
+                            <div class="spotifyplaylists-image">
+                                <img src="https://i.scdn.co/image/ab67706f000000024dbd336b06518c0a2fc75149"
+                                    alt="playlist-4">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>Warm instrumental versions of your favorite Christmas songs.</p>
+                            </div>
+                        </div>
+                        <div class="spotifyplaylists">
+                            <div class="spotifyplaylists-image">
+                                <img src="https://i.scdn.co/image/ab67706f000000027dc5028b26eb62f22d31bb1f"
+                                    alt="playlist-5">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>the beat of your drift</p>
+                            </div>
+                        </div>
+                        <div class="spotifyplaylists">
+                            <div class="spotifyplaylists-image">
+                                <img src="https://i.scdn.co/image/ab67706f00000002e85a6109ab076d5a2ade47cd"
+                                    alt="playlist-6">
+                                <div class="overlay"></div>
+                                <div class="play-button">▶</div>
+                            </div>
+                            <div class="name">
+                                <p>New music from BossMan Dlow, Offset and BNYX with Lil Yachty.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    <div class="company footer-header">
+                        <p>Company</p>
+                        <ul>
+                            <li>About</li>
+                            <li>Jobs</li>
+                            <li>For the Record</li>
+                        </ul>
+                    </div>
+
+                    <div class="communities footer-header">
+                        <p>Communities</p>
+                        <ul>
+                            <li>For Artists</li>
+                            <li>Developers</li>
+                            <li>Advertising</li>
+                            <li>Investors</li>
+                            <li>Vendors</li>
+                        </ul>
+                    </div>
+
+                    <div class="useful-links footer-header">
+                        <p>Useful links</p>
+                        <ul>
+                            <li>Support</li>
+                            <li>Free Mobile App</li>
+                        </ul>
+                    </div>
+
+                    <div class="spotify-plans footer-header">
+                        <p>Spotify Plans</p>
+                        <ul>
+                            <li>Premium Individual</li>
+                            <li>Premium Duo</li>
+                            <li>Premium Family</li>
+                            <li>Premium Student</li>
+                            <li>Spotify Free</li>
+                        </ul>
+                    </div>
+                    <div class="sociallogo">
+                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20data-encore-id='icon'%20role='img'%20aria-hidden='true'%20viewBox='0%200%2016%2016'%20class='Svg-sc-ytk21e-0%20dCAvla'%3e%3c!--%20Background%20circle%20--%3e%3ccircle%20cx='8'%20cy='8'%20r='8'%20fill='rgb(50,%2050,%2050)'%20/%3e%3c!--%20Icon%20paths%20--%3e%3cpath%20d='M8%201.44c2.136%200%202.389.009%203.233.047.78.036%201.203.166%201.485.276.348.128.663.332.921.598.266.258.47.573.599.921.11.282.24.706.275%201.485.039.844.047%201.097.047%203.233s-.008%202.389-.047%203.232c-.035.78-.166%201.204-.275%201.486a2.654%202.654%200%200%201-1.518%201.518c-.282.11-.706.24-1.486.275-.843.039-1.097.047-3.233.047s-2.39-.008-3.232-.047c-.78-.035-1.204-.165-1.486-.275a2.477%202.477%200%200%201-.921-.599%202.477%202.477%200%200%201-.599-.92c-.11-.282-.24-.706-.275-1.486-.038-.844-.047-1.096-.047-3.232s.009-2.39.047-3.233c.036-.78.166-1.203.275-1.485.129-.348.333-.663.599-.921a2.49%202.49%200%200%201%20.92-.599c.283-.11.707-.24%201.487-.275.843-.038%201.096-.047%203.232-.047L8%201.441zm.001-1.442c-2.172%200-2.445.01-3.298.048-.854.04-1.435.176-1.943.373a3.928%203.928%200%200%200-1.417.923c-.407.4-.722.883-.923%201.417-.198.508-.333%201.09-.372%201.942C.01%205.552%200%205.826%200%208c0%202.172.01%202.445.048%203.298.04.853.174%201.433.372%201.941.2.534.516%201.017.923%201.417.4.407.883.722%201.417.923.508.198%201.09.333%201.942.372.852.039%201.126.048%203.299.048%202.172%200%202.445-.01%203.298-.048.853-.04%201.433-.174%201.94-.372a4.087%204.087%200%200%200%202.34-2.34c.199-.508.334-1.09.373-1.942.039-.851.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.853-.174-1.433-.372-1.94a3.924%203.924%200%200%200-.923-1.418A3.928%203.928%200%200%200%2013.24.42c-.508-.197-1.09-.333-1.942-.371-.851-.041-1.125-.05-3.298-.05l.001-.001z'%20fill='white'/%3e%3cpath%20d='M8%203.892a4.108%204.108%200%201%200%200%208.216%204.108%204.108%200%200%200%200-8.216zm0%206.775a2.668%202.668%200%201%201%200-5.335%202.668%202.668%200%200%201%200%205.335zm4.27-5.978a.96.96%200%201%200%200-1.92.96.96%200%200%200%200%201.92z'%20fill='white'/%3e%3c/svg%3e" alt="insta">
+                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20data-encore-id='icon'%20role='img'%20aria-hidden='true'%20viewBox='0%200%2016%2016'%20class='Svg-sc-ytk21e-0%20dCAvla'%3e%3c!--%20Background%20circle%20--%3e%3ccircle%20cx='8'%20cy='8'%20r='8'%20fill='rgb(50,%2050,%2050)'%20/%3e%3c!--%20Icon%20path%20--%3e%3cpath%20d='M13.54%203.889a2.968%202.968%200%200%200%201.333-1.683%205.937%205.937%200%200%201-1.929.738%202.992%202.992%200%200%200-.996-.706%202.98%202.98%200%200%200-1.218-.254%202.92%202.92%200%200%200-2.143.889%202.929%202.929%200%200%200-.889%202.15c0%20.212.027.442.08.691a8.475%208.475%200%200%201-3.484-.932A8.536%208.536%200%200%201%201.532%202.54a2.993%202.993%200%200%200-.413%201.523c0%20.519.12%201%20.361%201.445.24.445.57.805.988%201.08a2.873%202.873%200%200%201-1.373-.374v.04c0%20.725.23%201.365.69%201.92a2.97%202.97%200%200%200%201.739%201.048%202.937%202.937%200%200%201-1.365.056%202.94%202.94%200%200%200%201.063%201.5%202.945%202.945%200%200%200%201.77.603%205.944%205.944%200%200%201-3.77%201.302c-.243%200-.484-.016-.722-.048A8.414%208.414%200%200%200%205.15%2014c.905%200%201.763-.12%202.572-.361.81-.24%201.526-.57%202.147-.988a9.044%209.044%200%200%200%201.683-1.46c.5-.556.911-1.155%201.234-1.798a9.532%209.532%200%200%200%20.738-1.988%208.417%208.417%200%200%200%20.246-2.429%206.177%206.177%200%200%200%201.508-1.563c-.56.249-1.14.407-1.738.476z'%20fill='white'/%3e%3c/svg%3e" alt="twitter">
+                        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20data-encore-id='icon'%20role='img'%20aria-hidden='true'%20viewBox='0%200%2016%2016'%20class='Svg-sc-ytk21e-0%20dYnaPI'%3e%3c!--%20Background%20circle%20--%3e%3ccircle%20cx='8'%20cy='8'%20r='8'%20fill='rgb(50,%2050,%2050)'%20/%3e%3c!--%20Icon%20path%20--%3e%3cpath%20d='M16%208a8%208%200%201%200-9.25%207.903v-5.59H4.719V8H6.75V6.237c0-2.005%201.194-3.112%203.022-3.112.875%200%201.79.156%201.79.156V5.25h-1.008c-.994%200-1.304.617-1.304%201.25V8h2.219l-.355%202.313H9.25v5.59A8.002%208.002%200%200%200%2016%208z'%20fill='white'/%3e%3c/svg%3e" alt="facebook">
+                    </div>
+                </footer>
+                <div class="rights">© 2024 Spotify AB</div>
+            </div>
+        </div>
+
+    </main>
+    <div class="popfornewuser">
+        <div class="preview">
+            <div class="text">
+                <p>Preview of Spotify</p>
+                <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+            </div>
+            <button>Sign up for free</button>
+        </div>
+    </div>
+</body>
+
+</html>
