@@ -4,7 +4,8 @@ const songs = {
     "Jatt Mehkma": "Jatt Mehkma - Glory 128 Kbps.mp3",
     "High On Me": "High On Me - Glory 128 Kbps.mp3",
     "Fuck Them": "Fuck Them - Glory 128 Kbps.mp3",
-    "Bonita": "Bonita - Glory 128 Kbps.mp3"
+    "Bonita": "Bonita - Glory 128 Kbps.mp3",
+    "Payal": "Payal - Glory 320 Kbps.mp3"
 };
 
 // UI Elements
@@ -32,7 +33,7 @@ songTitles.forEach((titleElement) => {
     titleElement.addEventListener("click", () => {
         const songName = titleElement.textContent.trim();
         if (songs[songName]) {
-            const songPath = `https://sppoootify.freewebhostmost.com/songs/${songs[songName]}`;
+            const songPath = `./songs/${songs[songName]}`;
             console.log("Song path: ", songPath);
             // const songPath = `http://127.0.0.1:5500/spotify/songs/${songs[songName]}`; 
 
@@ -146,4 +147,36 @@ function formatTime(seconds) {
 // Volume control
 volumeControl.addEventListener("input", (event) => {
     audioPlayer.volume = event.target.value / 100;
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const leftSidebar = document.querySelector('.left');
+    const rightContent = document.querySelector('.right');
+    
+    // Add initial state class
+    leftSidebar.classList.add('menu-closed');
+    rightContent.classList.add('full-width');
+    let isMenuOpen = false;
+
+    menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event bubbling
+        leftSidebar.classList.toggle('menu-closed');
+        rightContent.classList.toggle('full-width');
+        isMenuOpen = !isMenuOpen;
+        
+        // Rotate hamburger icon
+        const hamburgerIcon = menuToggle.querySelector('.hamburger-icon');
+        hamburgerIcon.style.transform = isMenuOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (isMenuOpen && !leftSidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+            leftSidebar.classList.add('menu-closed');
+            rightContent.classList.add('full-width');
+            isMenuOpen = false;
+        }
+    });
 });
