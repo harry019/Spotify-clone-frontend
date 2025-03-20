@@ -23,7 +23,7 @@ const loopButton = document.querySelector(".loop");
 
 // Play/pause state
 let isPlaying = false;
-playPauseButton.src = "./Pictures_and_logos/play.svg"; // Initial state
+playPauseButton.src = "./public/Pictures_and_logos/play.svg"; // Initial state
 
 // Loop state
 let isLooping = false;
@@ -33,7 +33,7 @@ songTitles.forEach((titleElement) => {
     titleElement.addEventListener("click", () => {
         const songName = titleElement.textContent.trim();
         if (songs[songName]) {
-            const songPath = `./songs/${songs[songName]}`;
+            const songPath = `./public/songs/${songs[songName]}`;
             console.log("Song path: ", songPath);
             // const songPath = `http://127.0.0.1:5500/spotify/songs/${songs[songName]}`; 
 
@@ -43,7 +43,7 @@ songTitles.forEach((titleElement) => {
             }
             audioPlayer.play();
             isPlaying = true;
-            playPauseButton.src = "./Pictures_and_logos/pause.svg";
+            playPauseButton.src = "./public/Pictures_and_logos/pause.svg";
 
             // Set active state
             songTitles.forEach(s => s.classList.remove("active"));
@@ -56,10 +56,10 @@ songTitles.forEach((titleElement) => {
 playPauseButton.addEventListener("click", () => {
     if (isPlaying) {
         audioPlayer.pause(); // Pause the audio
-        playPauseButton.src = "./Pictures_and_logos/play.svg"; // Change button icon to play
+        playPauseButton.src = "./public/Pictures_and_logos/play.svg"; // Change button icon to play
     } else {
         audioPlayer.play(); // Play the audio
-        playPauseButton.src = "./Pictures_and_logos/pause.svg"; // Change button icon to pause
+        playPauseButton.src = "./public/Pictures_and_logos/pause.svg"; // Change button icon to pause
     }
     isPlaying = !isPlaying; // Toggle the playing state
 });
